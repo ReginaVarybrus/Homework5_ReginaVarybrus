@@ -35,18 +35,13 @@ console.log(someArray);
 
 console.log('====Task 3====');
 
-function calcSum(a, b, ...args) {
-    
-    let result = a + b;
-    if (b === undefined) {
-        return 0;
-    }
+function calcSum(...args) {
+    let result = 0;
     for (let arg of args) {
-      result += arg;
+        result += arg;
     }
-
     return result;
-  }
+}
 
   let sum1 = calcSum(0);
   let sum2 = calcSum(1, 2, 3); 
@@ -71,7 +66,15 @@ function createPipe(symbol) {
 
 console.log('====Task 5====');
 
-function makeText(text = 'Hello', func = console.log(`${text}`)) {
-    return func, text;
+function showMessage(text, func) {
+  
+  function func(text) {
+    console.log(`${text}`);
+  }
+
+  func(text);
+  alert(`${text}`);
+  
 }
-alert(makeText());
+showMessage('hello');
+
