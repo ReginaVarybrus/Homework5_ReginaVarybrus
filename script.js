@@ -2,7 +2,7 @@
 
 console.log('====Task 1====');
 
-function fillArray (length, item) {
+function fillArray(length, item) {
 
     let array = [...Array(length)];
 
@@ -32,6 +32,20 @@ function filterArray(item) {
 
 someArray = someArray.filter(filterArray);
 console.log(someArray);
+
+// function filterArray(arr, ...filters) {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < filters.length; j++) {
+//       if (arr[i] === filters[j]) {
+//         arr.splice(i, 1);
+//         i--;
+//         break;
+//       }
+//     }
+//   }
+//   return arr;
+// }
+
 
 console.log('====Task 3====');
 
@@ -67,14 +81,10 @@ function createPipe(symbol) {
 console.log('====Task 5====');
 
 function showMessage(text, func) {
-  
-  function func(text) {
-    console.log(`${text}`);
-  }
-
   func(text);
-  alert(`${text}`);
-  
-}
-showMessage('hello');
+};
+
+
+showMessage('hello', console.log);
+showMessage('hello', alert);
 
